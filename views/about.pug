@@ -1,0 +1,105 @@
+extends layout
+ 
+block content
+    div.content
+        // The Welcome message can be customized below within the h1 section.  Each div has an animation section using a script tag.  The page displays the bio, soft/hard skills, software, and education
+        div.myprofile
+            div.bio
+                h1(id=`welcome`, style=`display: none;`)
+                    | Hi!  
+
+                script.
+                    $('#welcome').fadeIn(200);
+
+                h1(id=`name`, style=`display: none;`)
+                    | I'm 
+                                
+                    name #{personal.first} #{personal.last}
+                
+                div.profilepicture(id=`profilepicture`, style=`background: url('/images/me.jpg') no-repeat; background-size: cover;display: none;`)
+            
+                div.summary(id=`summary`, style=`display: none;`)
+                    h1(style=`font-size: 20px;`)
+                        | #{personal.title}
+                    | #{personal.bio}
+            
+                h2(style=`margin-bottom: 10px; display: none;`)
+                    | Skills
+                div.softskillslist(id=`softskillslist`, style=`display: none;`)
+
+                        each skill in softskills
+                            div.softskillicon(id=`softskillicon`, style=`background: url('/icons/${skill.icon}') no-repeat; background-size: cover; background-position: center center; background-origin: content-box;`)
+                            div.softskillitem(id=`softskillitem`)
+                                    | #{skill.name}
+
+            div.skillscontainer(id=`skillscontainer`, style=`display: none;`)
+                h2
+                    | Languages
+                each languageprogress in languagelist
+                    div.skillbar(id=`skillbar${languageprogress.id}`, style=`display: none;`)
+                        div.skilltitle(style=`color: ${languageprogress.color}`)
+                            | #{languageprogress.name}
+                        div.progressbar
+                            - var idtag = languageprogress.id
+                            - var progressamt = languageprogress.proficiency
+                            div.progress(id=`${idtag}`, style=`width: 1%;`)
+                        div.skillpercentage
+                            | #{languageprogress.proficiency}%
+                    script.
+                        setTimeout(function(){
+                            $('#skillscontainer').fadeIn(1000);
+                            $('#skillbar#{languageprogress.id}').fadeIn(1000);
+                            $('#' + '#{idtag}').animate({width : '+=' + #{progressamt} + '%'}, 1000);
+                        },1000);
+                h2
+                    | Software and Operating Systems
+                each softwareeprogress in softwarelist
+                    div.skillbar(id=`skillbar${softwareeprogress.id}`, style=`display: none;`, onclick=`$('#${softwareeprogress.id}details').slideToggle(); AnimatedRotateObject(180,${softwareeprogress.id}detailsdb);`)
+                        div.skilldropdown
+                            div.arrow(id=`${softwareeprogress.id}detailsdb`, style=`font-size: 22px;`)
+                                | &#9660;
+                        div.skilltitle
+                            | #{softwareeprogress.name}
+                        div.progressbar
+                            - var idtag = softwareeprogress.id
+                            - var progressamt = softwareeprogress.proficiency
+                            div.progress(id=`${idtag}`, style=`width: 1%;`)
+                        div.skillpercentage
+                            | #{softwareeprogress.proficiency}%
+                    div.details(id=`${softwareeprogress.id}details`, style=`background-color: rgb(32,33,36); display: none;`)
+                        ul(style=`margin-left: 25px;`)
+                            each val in softwareeprogress.detail
+                                li
+                                    | #{val}
+                    script.
+                        setTimeout(function(){
+                            $('#skillbar#{softwareeprogress.id}').fadeIn(1000);
+                            $('#' + '#{idtag}').animate({width : '+=' + #{progressamt} + '%'}, 1000);
+                        },1000);
+                div.proficiencies(id=`proficienciescontainer`, style=`display: none; padding: 25px 0px 25px 0px;`)
+                    h2
+                        | Proficiencies
+                    ul(style=`padding: 15px;`)
+                        each proficiency in proficiencylist
+                            li
+                                | #{proficiency.name}
+
+                div.education(id=`educationcontainer`, style=`display: none; padding: 0px 0px 15px 0px;`)
+                    h2
+                        | Education
+                    div.edublock(id=`edublock`)
+                        div.edupic(id=`edupic`)
+                            img(src=`/images/${personal.eduicon}`)
+                        div.edudata(id=`edudata`)
+                            |  #{personal.uni}
+                            br
+                            |  #{personal.degree} - #{personal.major} - #{personal.year}
+
+        script.
+            setTimeout(function(){$('#name').fadeIn(500);},900); 
+            setTimeout(function(){$('#profilepicture').fadeIn(1000);},1000);
+            setTimeout(function(){$('#summary').fadeIn(500);},1200);
+            setTimeout(function(){$('#softskillslist').fadeIn(500);},1200);
+            setTimeout(function(){$('h2').fadeIn(500);},1200);
+            setTimeout(function(){$('#proficienciescontainer').fadeIn(500);},1200);
+            setTimeout(function(){$('#educationcontainer').fadeIn(500);},1200);

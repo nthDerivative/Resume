@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/style.css')
+    link(href='/css/navbar.css', rel='stylesheet')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src='https://code.jquery.com/jquery-2.1.3.min.js')
+    block scripts
+        script(src='/scripts/animations.js')
+body
+    div.defaultheader(id="defaultheader")
+        div.contenttitle
+            | #{title}
+        div.nav
+            // Nav bar menu on the top of the screen
+            button(id="menubutton")
+                img(src="/images/menu.png" alt="Menu" id="menupicture")
+            ul(id="menu")  
+                li(id="navitem")    
+                    a(href="/", id="aboutlink", style=`background-image: url("/icons/about.png");`)
+                        | About Me
+                li(id="navitem")
+                    a(href="/timeline", id="timelinelink", style=`background-image: url("/icons/timeline.png");`)
+                        | My Timeline
+                li(id="navitem")
+                    a(href="/projects", id="projectslink", style=`background-image: url("/icons/projects.png");`)
+                        | Projects
+                li(id="navitem")
+                    a(href="/contact", id="contactlink", style=`background-image: url("/icons/contact.png");`)
+                        | Contact
+                li(id="navitem") 
+                    a(href="/resume", style=`background-image: url("/icons/resume.png");`)
+                        | Resume
+            script.
+                $('#{activepage}').css({"backgroundColor": "rgb(39, 48, 60)","color":"rgb(95,155,234)"});
+
+    div.messagebox(style=`display: none;`, id=`messagebox`)
+        div.messagecontent(id=`messagecontent`)
+            div.close(id=`close`)
+                | &times; 
+            div.messagecontenttitle(id=`messagecontenttitle`, style=`display: none;`)    
+                | 
+            div.messagetext(id=`messagetext`)
+                | #{alerttext}
+            div.messagelink(id=`messagelink`, style=`display: none;`)       
+                |
+        if (message == true)
+            // Message box fade in animation
+            script.
+                setTimeout(function(){
+                    $('#messagebox').fadeIn("slow");
+                },100);
+
+block content
+
+block footer
+    - var thisYear = moment().startOf('year').format('YYYY');   
+    div.footer(style=`display: none;`, id=`footer`)
+        hr
+        | #{thisYear} - #{name}
+    script.
+        setTimeout(function(){
+            $('#footer').fadeIn("slow");
+        },1000);

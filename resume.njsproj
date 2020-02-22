@@ -29,6 +29,44 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="public\icons\001-timeline.png" />
+    <Content Include="public\icons\005-office.png" />
+    <Content Include="public\icons\about odl.png" />
+    <Content Include="public\icons\about.png" />
+    <Content Include="public\icons\analytical.png" />
+    <Content Include="public\icons\attitude.png" />
+    <Content Include="public\icons\business.png" />
+    <Content Include="public\icons\checklist.png" />
+    <Content Include="public\icons\communication.png" />
+    <Content Include="public\icons\contact.png" />
+    <Content Include="public\icons\details.png" />
+    <Content Include="public\icons\leadership.png" />
+    <Content Include="public\icons\multitask.png" />
+    <Content Include="public\icons\network.png" />
+    <Content Include="public\icons\problemsolving.png" />
+    <Content Include="public\icons\process.png" />
+    <Content Include="public\icons\projects.png" />
+    <Content Include="public\icons\resume.png" />
+    <Content Include="public\icons\timeline.png" />
+    <Content Include="public\icons\vendor.png" />
+    <Content Include="public\images\bucs.png" />
+    <Content Include="public\images\celebration.jpg" />
+    <Content Include="public\images\close.png" />
+    <Content Include="public\images\disney.png" />
+    <Content Include="public\images\dod.png" />
+    <Content Include="public\images\edu.png" />
+    <Content Include="public\images\fileorg.png" />
+    <Content Include="public\images\ha.svg" />
+    <Content Include="public\images\me.jpg" />
+    <Content Include="public\images\menu.png" />
+    <Content Include="public\images\node.svg" />
+    <Content Include="public\images\pburg.jpg" />
+    <Content Include="public\images\pitt.png" />
+    <Content Include="public\images\pittengineering.jpg" />
+    <Content Include="public\images\pittfed.jpg" />
+    <Content Include="public\images\server.png" />
     <Content Include="resume.xml" />
     <Content Include="Dockerfile">
       <SubType>Code</SubType>

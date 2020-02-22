@@ -1,0 +1,169 @@
+body {
+}
+html {
+    overflow-y: scroll;
+}
+
+.defaultheader {
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    display: grid;
+    height: 100px;
+    background-color: rgb(32,33,36);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome 
+    background-image: linear-gradient(0deg, rgba(24, 18, 30, 1) 10%, rgba(35, 50, 55, 1) 100%);*/
+    display: flex;
+}
+
+.contenttitle {
+    display: block;
+    margin: auto;
+    vertical-align: middle;
+    font-size: 30px;
+    float: left;
+    margin-left: 5vh;
+    width: 30%;
+    height: 100px;
+    line-height: 100px;
+}
+
+.nav {
+    width: 100%;
+    z-index: 100;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav li {
+    padding: 10px;
+    list-style-type: none;
+    height: 100px;
+    width: 175px;
+    display: flex;
+}
+
+.nav a {
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: 5px center;
+    font-size: 18px;
+    color: rgb(189,193,198);
+    background-color: rgb(32,33,36);
+    border-radius: 5px;
+    align-self: center;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding-right: 17px;
+    text-align: right;
+}
+
+.nav:hover {
+    border-color: white;
+}
+
+.resume {
+    float: right;
+    border: 1px solid lightgrey;
+    background-color: #984B43;
+    text-align: center;
+    color: #E8E8E8;
+}
+
+/*.nav a::before {
+    content: "// ";
+    color:aqua;
+}*/
+
+img {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    border: none;
+    float: right;
+}
+
+@media only screen and (max-width: 1000px) {
+    .defaultheader {
+        grid-template-columns: auto 50px;
+        display: grid;
+        height: 70px;
+    }
+
+    .nav {
+        padding: 0px;
+    }
+
+    .contenttitle {
+        height: 70px;
+        margin: 0px 0px 0px 25px;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        line-height: 70px;
+    }
+
+    .nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: grey;
+        border-bottom: 1px solid grey;
+    }
+
+    .nav li {
+        width: 100%;
+        margin: 0px;
+        background-color: none;
+        padding: 0px;
+    }
+
+    .nav #navitem {
+        height: 100%;
+    }
+
+    .nav a {
+        padding-left: 50px;
+        width: 100%;
+        text-decoration: none;
+        text-align: left;
+        border-radius: 0px;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    button {
+        display: block;
+        right: 0px;
+        background: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30px;
+        height: 30px;
+    }
+}

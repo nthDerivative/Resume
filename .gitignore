@@ -12,6 +12,9 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+public/images/*
+json/*.json
+public/icons/*
 
 # Build results
 [Dd]ebug/
@@ -167,8 +170,6 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
-public/images/*.png
-json/*.json
 
 # Publish Web Output
 *.[Pp]ublish.xml

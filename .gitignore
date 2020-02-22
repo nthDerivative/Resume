@@ -15,6 +15,9 @@
 public/images/*
 json/*.json
 public/icons/*
+!public/json/templates
+!public/icons
+!public/images
 
 # Build results
 [Dd]ebug/

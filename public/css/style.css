@@ -31,6 +31,7 @@ body {
 .content {
     flex: 1 0 auto;
     padding: 50px;
+	
 }
 
 .footer {
@@ -68,6 +69,7 @@ name {
     font-size: 20px;
     grid-template-columns: 100px auto;
     display: grid;
+	
 }
 
 @media only screen and (max-width: 1000px) {
@@ -648,6 +650,11 @@ input[type=submit]:hover {
         padding-top: 100px;
     }
 
+.content {
+  
+    padding: 10px;
+	
+}
     .messagecontent {
         width: 90%;
     }

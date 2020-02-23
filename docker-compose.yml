@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  letsencrypt:
+    image: nthderivative/resume
+    container_name: resume
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - './json:/usr/src/app/json'
+      - './public:/usr/src/app/public'
+    ports:
+      - 2443:443
+      - 280:8080
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: proxynet

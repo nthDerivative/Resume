@@ -172,7 +172,7 @@ name {
 }
 
 .skilldropdown {
-    padding: 0px 10px 0px 10px;
+    padding: 0px;
 }
 
 .skilltitle {
@@ -652,7 +652,7 @@ input[type=submit]:hover {
 
 .content {
   
-    padding: 10px;
+    padding: 0px;
 	
 }
     .messagecontent {
@@ -669,5 +669,17 @@ input[type=submit]:hover {
 
     .messagetext {
         font-size: 15px;
+    }
+    .skillscontainer{
+        padding: 0px;
+    }
+
+    .skilltitle {
+        height: 40px;
+
+    }
+
+    .skillpercentage{
+        font-size: 14px;
     }
 }
